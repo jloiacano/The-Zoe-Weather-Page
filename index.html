@@ -11,25 +11,29 @@
 </head>
 
 <body>
+    <div>
+    <label>CITY: </label>
+    <input id="city" type="text" />
+    <label>STATE: </label>
+    <input id="state" type="text" />
+    <button id="cityAndState">SHOW THE WEATHER FOR CITY AND STATE</button>
+    </div>
+
+    <div><span id="time"></span></div>
+
+    <div id="today" class="day today">
+        <img id="todaysImage" src=""  />
+        <span>Current Temperature: </span><span id="currentTemp"></span>
+        <span>Todays High: </span><span id="todaysHigh"></span>
+        <span>Todays Low: </span><span id="todaysLow"></span>
+    </div>
+    <div id="forecast">
+
+    </div>
+
 <!--    begin required attribution-->
     <a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/purple.png" width="134" height="29"/> </a>
 <!--    end required attribution-->
-    <div id="geoPosition"></div>
-    <div id="weatherResponse"></div>
-    <br />
-    <img class="weatherImage" src="imageAssets/partlyCloudyCroppedWhitened.png" alt="Partly Cloudy">
-    <br />
-    <img class="weatherImage" src="imageAssets/windyCroppedWhitened.png" alt="Windy">
-    <br />
-    <img class="weatherImage" src="imageAssets/sunnyCroppedWhitened.png" alt="Sunny">
-    <br />
-    <img class="weatherImage" src="imageAssets/cloudyCroppedWhitened.png" alt="Cloudy">
-    <br />
-    <img class="weatherImage" src="imageAssets/rainCroppedWhitened.png" alt="Rainy">
-    <br />
-    <img class="weatherImage" src="imageAssets/snowCroppedWhitened.png" alt="Snowy">
-    <br />
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/weather.js"></script>
