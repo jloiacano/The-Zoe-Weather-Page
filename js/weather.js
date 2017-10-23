@@ -92,7 +92,7 @@
         for (i = 1; i <= forcast.length - 1; i += 1) {
             src = codeToImage(forcast[i].code);
 
-            day = '<div class="day forcast"><img class="forecastImage weatherImage" src="' + src + '" alt="weatherType"  /><span class="forecastDay">' + forcast[i].day + ' </span><span class="forecastDate">' + forcast[i].date + '</span><br /><span class="forecastHigh">HIGH: ' + forcast[i].high + '</span><br /><span class="forecastLow">lOW: ' + forcast[i].low + '</span><br /><span class="forecastText">' + forcast[i].text + '</span></div>';
+            day = '<div class="day forcastDay"><img class="forecastImage weatherImage" src="' + src + '" alt="weatherType"  /><span class="forecastDay">' + forcast[i].day + ' </span><span class="forecastDate">' + forcast[i].date + '</span><br /><span class="forecastHigh">HIGH: ' + forcast[i].high + '</span><br /><span class="forecastLow">lOW: ' + forcast[i].low + '</span><br /><span class="forecastText">' + forcast[i].text + '</span></div>';
 
             $("#forecast").append(day);
         }

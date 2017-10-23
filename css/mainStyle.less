@@ -64,12 +64,23 @@ body {
         #forecast {
             width: 400px;
 
-            .forecastHigh {
-                color: @high;
-            }
+            .forecastDay {
+                position: relative;
+                top: 0px;
 
-            .forecastLow {
-                color: @low;
+                .forecastHigh {
+                    position: absolute;
+                    top: 0em;
+                    right: 0em;
+                    color: @high;
+                }
+
+                .forecastLow {
+                    position: absolute;
+                    top: 1em;
+                    right: 0em;
+                    color: @low;
+                }
             }
         }
 

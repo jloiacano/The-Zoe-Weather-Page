@@ -50,10 +50,20 @@ body #main #todayCollection #otherData {
 body #main #forecast {
   width: 400px;
 }
-body #main #forecast .forecastHigh {
+body #main #forecast .forecastDay {
+  position: relative;
+  top: 0px;
+}
+body #main #forecast .forecastDay .forecastHigh {
+  position: absolute;
+  top: 0em;
+  right: 0em;
   color: black;
 }
-body #main #forecast .forecastLow {
+body #main #forecast .forecastDay .forecastLow {
+  position: absolute;
+  top: 1em;
+  right: 0em;
   color: black;
 }
 body #main .weatherImage {
