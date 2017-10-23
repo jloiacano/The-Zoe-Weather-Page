@@ -87,12 +87,22 @@
         $("#currentTemp").text(currentTemp);
         $("#todaysHigh").text(forcast[0].high);
         $("#todaysLow").text(forcast[0].low);
+        $("#windChill").text(weather.results.channel.wind.chill);
+        $("#windDirection").text(weather.results.channel.wind.direction);
+        $("#windSpeed").text(weather.results.channel.wind.speed);
+        $("#atmosphereHumidity").text(weather.results.channel.atmosphere.humidity);
+        $("#atmospherePressure").text(weather.results.channel.atmosphere.pressure);
+        $("#atmosphereRising").text(weather.results.channel.atmosphere.rising);
+        $("#atmosphereVisibility").text(weather.results.channel.atmosphere.visibility);
+        $("#astronomySunrise").text(weather.results.channel.astronomy.sunrise);
+        $("#astronomySunset").text(weather.results.channel.astronomy.sunset);
+
 
         // set the forecast data and append it to the forecast div
         for (i = 1; i <= forcast.length - 1; i += 1) {
             src = codeToImage(forcast[i].code);
 
-            day = '<div class="day forcastDay"><img class="forecastImage weatherImage" src="' + src + '" alt="weatherType"  /><span class="forecastDay">' + forcast[i].day + ' </span><span class="forecastDate">' + forcast[i].date + '</span><br /><span class="forecastHigh">HIGH: ' + forcast[i].high + '</span><br /><span class="forecastLow">lOW: ' + forcast[i].low + '</span><br /><span class="forecastText">' + forcast[i].text + '</span></div>';
+            day = '<div class="forcastDayDiv"><img class="forecastImage weatherImage" src="' + src + '" alt="weatherType" /><span class="forecastDayAndDate"><span class="forecastDay">' + forcast[i].day + '</span><span class="forecastDate">' + forcast[i].date + '</span></span><span class="wholeForecastHigh">HIGH: <span class="forecastHigh">' + forcast[i].high + '</span></span><span class="wholeForecastLow">LOW: <span class="forecastLow">' + forcast[i].low + '</span></span><span class="forecastText">' + forcast[i].text + '</span></div>';
 
             $("#forecast").append(day);
         }

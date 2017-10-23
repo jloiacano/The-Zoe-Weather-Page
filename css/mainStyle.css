@@ -37,7 +37,7 @@ body #main #todayCollection #today .highTemp {
 }
 body #main #todayCollection #today .lowTemp {
   position: absolute;
-  top: 2em;
+  top: 2.5em;
   right: 1em;
   font-size: 2em;
 }
@@ -48,22 +48,38 @@ body #main #todayCollection #otherData {
   color: #1a05fa;
 }
 body #main #forecast {
-  width: 400px;
+  width: 20em;
 }
-body #main #forecast .forecastDay {
+body #main #forecast .forcastDayDiv {
+  width: 100%;
   position: relative;
   top: 0px;
 }
-body #main #forecast .forecastDay .forecastHigh {
+body #main #forecast .forcastDayDiv .forecastImage {
+  width: 100%;
+}
+body #main #forecast .forcastDayDiv .forecastDayAndDate {
+  position: absolute;
+  top: 0em;
+  left: 0em;
+  color: black;
+}
+body #main #forecast .forcastDayDiv .wholeForecastHigh {
   position: absolute;
   top: 0em;
   right: 0em;
   color: black;
 }
-body #main #forecast .forecastDay .forecastLow {
+body #main #forecast .forcastDayDiv .wholeForecastLow {
   position: absolute;
   top: 1em;
   right: 0em;
+  color: black;
+}
+body #main #forecast .forcastDayDiv .forecastText {
+  position: absolute;
+  bottom: 0em;
+  left: 0em;
   color: black;
 }
 body #main .weatherImage {

@@ -47,7 +47,7 @@ body {
                 }
                 .lowTemp {
                     position: absolute;
-                    top: 2em;
+                    top: 2.5em;
                     right: 1em;
                     font-size: 2em;
                 }
@@ -62,23 +62,42 @@ body {
         }
 
         #forecast {
-            width: 400px;
+            width: 20em;
 
-            .forecastDay {
+            .forcastDayDiv {
+                width: 100%;
                 position: relative;
                 top: 0px;
 
-                .forecastHigh {
+                .forecastImage {
+                    width: 100%;
+                }
+
+                .forecastDayAndDate {
+                    position: absolute;
+                    top: 0em;
+                    left: 0em;
+                    color: @high;
+                }
+
+                .wholeForecastHigh {
                     position: absolute;
                     top: 0em;
                     right: 0em;
                     color: @high;
                 }
 
-                .forecastLow {
+                .wholeForecastLow {
                     position: absolute;
                     top: 1em;
                     right: 0em;
+                    color: @low;
+                }
+
+                .forecastText {
+                    position: absolute;
+                    bottom: 0em;
+                    left: 0em;
                     color: @low;
                 }
             }
