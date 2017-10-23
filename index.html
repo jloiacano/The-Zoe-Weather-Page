@@ -7,22 +7,34 @@
     </title>
     <meta lang="en">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="css/mainStyle.css">
 </head>
 
 <body>
-    <div>
-    <label>CITY: </label>
-    <input id="city" type="text" />
-    <label>STATE: </label>
-    <input id="state" type="text" />
-    <button id="cityAndState">SHOW THE WEATHER FOR CITY AND STATE</button>
+    <div class="location">
+
+        <img class="iconImage" src="imageAssets/locationCroppedTransparent.png" alt="location" />
+        <label>CITY: </label>
+        <input id="city" type="text" />
+        <label>STATE: </label>
+        <input id="state" type="text" />
+        <button id="cityAndState">UPDATE LOCATION</button>
+
+    </div>
+    <div class="settings">
+        <img class="iconImage" src="imageAssets/settingsCroppedTransparent2.png" alt="settings" />
+        <label>SCALE: </label>
+        <input type="radio" name="scale" value="farenheit" checked><span class="scaleFarenheit">F</span>
+        <input type="radio" name="scale" value="celsius"><span class="scaleCelsius">C</span>
+
+        <button id="changeScale">CHANGE SCALE</button>
     </div>
 
     <div><span id="time"></span></div>
 
     <div id="today" class="day today">
-        <img id="todaysImage" src=""  />
+        <img id="todaysImage" src="" />
         <span>Current Temperature: </span><span id="currentTemp"></span>
         <span>Todays High: </span><span id="todaysHigh"></span>
         <span>Todays Low: </span><span id="todaysLow"></span>
@@ -31,9 +43,9 @@
 
     </div>
 
-<!--    begin required attribution-->
+    <!--    begin required attribution-->
     <a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/purple.png" width="134" height="29"/> </a>
-<!--    end required attribution-->
+    <!--    end required attribution-->
 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/weather.js"></script>

@@ -1,10 +1,33 @@
-#yahooResponse {
-    border: solid 1px black;
-}
+@low: black;
+@high: black;
+@zoes-iridescent-turquoise: rgba(5, 250, 147, 1.0); //rgba(5, 250, 147, 1.0); // #05FA93; // hsl(155, 98%, 98%);
+@zoes-iridescent-fuchsia: rgba(250, 5, 108, 1.0); //rgba(250, 5, 108, 1.0); // #FA056C // hsl(335, 98%, 98%);
+@zoes-iridescent-cobalt: rgba(26, 5, 250, 1.0); //rgba(26, 5, 250, 1.0); // #1A05FA; // hsl(245, 98%, 98%);
+@zoes-pastel-turquoise: rgba(180, 250, 221, 1.0); //rgba(180, 250, 221, 1.0); // #B4FADD; // hsl(155, 28%, 98%);
+@zoes-pastel-fuchsia: rgba(250, 192, 216, 1.0); //rgba(250, 192, 216, 1.0); // #FAC0D8 // hsl(335, 23%, 98%);
+@zoes-pastel-cobalt: rgba(186, 180, 250, 1.0); //rgba(186, 180, 250, 1.0); // #BAB4FA; // hsl(245, 28%, 98%);
 
-#forecast {
-    width: 400px;
-}
-.weatherImage {
-    width: 20em;
+body {
+
+    background-color: @zoes-pastel-fuchsia;
+    color: @zoes-pastel-cobalt;
+    #forecast {
+        width: 400px;
+
+        .forecastHigh {
+            color: @high;
+        }
+
+        .forecastLow {
+            color: @low;
+        }
+    }
+    .weatherImage {
+        width: 20em;
+    }
+
+    .iconImage {
+        width: 4em;
+    }
+
 }

@@ -8,8 +8,8 @@
     /* jslint browser */
     /* global window, document, navigator */
 
-    function setWeather(response) {
-        var weather = response.query,
+    function doSomethingWithTheWeather() {
+        var weather = weatherJSON,
             time = weather.created,
             respoonseCity = weather.results.channel.location.city,
             responseState = weather.results.channel.location.region,
@@ -19,8 +19,6 @@
             day = "",
             i;
 
-        window.console.log("Current Temp: " + currentTemp + "\nTodays High " + forcast[0].high + "\nTodays Low " + forcast[0].low);
-
         $("#time").text("The weather for " + respoonseCity + ", " + responseState + " at " + time);
         $("#currentTemp").text(currentTemp);
         $("#todaysHigh").text(forcast[0].high);
@@ -28,77 +26,95 @@
 
         for (i = 1; i <= forcast.length - 1; i += 1) {
             switch (forcast[i].code) {
-                case "26":
-                case "27":
-                case "28":
-                    src = "imageAssets/cloudyCroppedTransparent.png";
-                    break;
-                case "29":
-                case "30":
-                case "44":
-                    src = "imageAssets/partlyCloudyCroppedTransparent.png";
-                    break;
-                case "1":
-                case "3":
-                case "4":
-                case "9":
-                case "11":
-                case "12":
-                case "35":
-                case "37":
-                case "38":
-                case "39":
-                case "40":
-                case "45":
-                case "46":
-                case "47":
-                    src = "imageAssets/rainCroppedTransparent.png";
-                    break;
-                case "5":
-                case "6":
-                case "7":
-                case "8":
-                case "10":
-                case "13":
-                case "14":
-                case "15":
-                case "16":
-                case "17":
-                case "18":
-                case "41":
-                case "42":
-                case "43":
-                    src = "imageAssets/snowCroppedTransparent.png";
-                    break;
-                case "31":
-                case "32":
-                case "33":
-                case "34":
-                case "36":
-                    src = "imageAssets/sunnyCroppedTransparent.png";
-                    break;
-                case "0":
-                case "2":
-                case "19":
-                case "20":
-                case "21":
-                case "22":
-                case "23":
-                case "24":
-                case "25":
-                    src = "imageAssets/windyCloudyCroppedTransparent.png";
-                    break;
-                default:
-                    break;
+            case "26":
+            case "27":
+            case "28":
+                src = "imageAssets/cloudyCroppedTransparent.png";
+                break;
+            case "29":
+            case "30":
+            case "44":
+                src = "imageAssets/partlyCloudyCroppedTransparent.png";
+                break;
+            case "1":
+            case "3":
+            case "4":
+            case "9":
+            case "11":
+            case "12":
+            case "35":
+            case "37":
+            case "38":
+            case "39":
+            case "40":
+            case "45":
+            case "46":
+            case "47":
+                src = "imageAssets/rainCroppedTransparent.png";
+                break;
+            case "5":
+            case "6":
+            case "7":
+            case "8":
+            case "10":
+            case "13":
+            case "14":
+            case "15":
+            case "16":
+            case "17":
+            case "18":
+            case "41":
+            case "42":
+            case "43":
+                src = "imageAssets/snowCroppedTransparent.png";
+                break;
+            case "31":
+            case "32":
+            case "33":
+            case "34":
+            case "36":
+                src = "imageAssets/sunnyCroppedTransparent.png";
+                break;
+            case "0":
+            case "2":
+            case "19":
+            case "20":
+            case "21":
+            case "22":
+            case "23":
+            case "24":
+            case "25":
+                src = "imageAssets/windyCroppedTransparent.png";
+                break;
+            default:
+                break;
             }
-            window.console.log(src);
-            day = '<div><img class="forecastImage weatherImage" src="' + src + '" alt="weatherType"  /><span class="forecastDay">' + forcast[i].day + '</span><span class="forecastDate">' + forcast[i].date + '</span><span class="forecastHigh">' + forcast[i].high + '</span><span class="forecastLow">' + forcast[i].low + '</span><span class="forecastText">' + forcast[i].text + '</span></div>';
+            day = '<div><img class="forecastImage weatherImage" src="' + src + '" alt="weatherType"  /><span class="forecastDay">' + forcast[i].day + ' </span><span class="forecastDate">' + forcast[i].date + '</span><br /><span class="forecastHigh">' + forcast[i].high + '</span><br /><span class="forecastLow">' + forcast[i].low + '</span><br /><span class="forecastText">' + forcast[i].text + '</span></div>';
 
             $("#forecast").append(day);
         }
     }
 
-    function setCityAndState() {
+    function setWeather(response) {
+        var i;
+        weatherJSON = response.query;
+
+        function toC(temp) {
+            var toReturn = (temp - 32) * 1.8;
+            return toReturn;
+        }
+
+        if ($("input:radio[name='scale']:checked").val() === "celsius") {
+            weatherJSON.results.channel.item.condition.temp = toC(weatherJSON.results.channel.item.condition.temp);
+            for (i = 0; i < weatherJSON.results.channel.item.forecast.length; i += 1) {
+                weatherJSON.results.channel.item.forecast[i].high = toC(weatherJSON.results.channel.item.forecast[i].high);
+                weatherJSON.results.channel.item.forecast[i].low = toC(weatherJSON.results.channel.item.forecast[i].low);
+            }
+        }
+        doSomethingWithTheWeather();
+    }
+
+    function loadFromCityAndState() {
 
         //// temp temp temp temp ////
         var city = $("#city").val(),
@@ -109,11 +125,18 @@
 
     }
 
-    function geoFindMe() {
+    function forceLocationEntry() {
+        // if location entry is already set, loadFromCityAndState();
+        //openLocationMenu
+        //highlight city, then state after city is entered
+        // loadFromCityAndState();
+
+    }
+
+    function getSomeWeather() {
 
         if (!navigator.geolocation) {
-            $("#geoPosition").html("<p>Geolocation is not supported by your browser</p>");
-            // open area where user can input city and state.
+            forceLocationEntry();
             return;
         }
 
@@ -131,8 +154,13 @@
         navigator.geolocation.getCurrentPosition(success, error);
     }
 
-    test = geoFindMe();
+    function testFunction() {
+        window.alert("testing");
+    }
 
-    $("#cityAndState").click(setCityAndState);
+    test = getSomeWeather();
+
+    $("#cityAndState").click(loadFromCityAndState);
+    $("#changeScale").click(getSomeWeather);
 
 }());
