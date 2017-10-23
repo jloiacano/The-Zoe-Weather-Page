@@ -6,28 +6,75 @@
 @zoes-pastel-turquoise: rgba(180, 250, 221, 1.0); //rgba(180, 250, 221, 1.0); // #B4FADD; // hsl(155, 28%, 98%);
 @zoes-pastel-fuchsia: rgba(250, 192, 216, 1.0); //rgba(250, 192, 216, 1.0); // #FAC0D8 // hsl(335, 23%, 98%);
 @zoes-pastel-cobalt: rgba(186, 180, 250, 1.0); //rgba(186, 180, 250, 1.0); // #BAB4FA; // hsl(245, 28%, 98%);
-
 body {
 
     background-color: @zoes-pastel-fuchsia;
-    color: @zoes-pastel-cobalt;
-    #forecast {
-        width: 400px;
-
-        .forecastHigh {
-            color: @high;
-        }
-
-        .forecastLow {
-            color: @low;
-        }
-    }
-    .weatherImage {
-        width: 20em;
-    }
+    color: @zoes-iridescent-cobalt;
 
     .iconImage {
         width: 4em;
     }
 
+    #main {
+        width: 80%;
+        margin: 0 auto;
+
+        #todayCollection {
+            width: 100%;
+            position: static;
+
+            #today {
+                width: 59%;
+                display: inline-block;
+                position: relative;
+                top: 0px;
+
+                #todaysImage {
+                    width: 100%;
+                }
+
+                .currentTemp {
+                    position: absolute;
+                    top: 0em;
+                    left: 0em;
+                    font-size: 6em;
+                }
+                .highTemp {
+                    position: absolute;
+                    top: 1em;
+                    right: 1em;
+                    font-size: 2em;
+                }
+                .lowTemp {
+                    position: absolute;
+                    top: 2em;
+                    right: 1em;
+                    font-size: 2em;
+                }
+            }
+
+            #otherData {
+                width: 39%;
+                display: inline-block;
+                background-color: @zoes-pastel-cobalt;
+                color: @zoes-iridescent-cobalt;
+            }
+        }
+
+        #forecast {
+            width: 400px;
+
+            .forecastHigh {
+                color: @high;
+            }
+
+            .forecastLow {
+                color: @low;
+            }
+        }
+
+        .weatherImage {
+            width: 20em;
+        }
+    }
 }

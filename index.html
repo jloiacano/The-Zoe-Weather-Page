@@ -31,16 +31,49 @@
         <button id="changeScale">CHANGE SCALE</button>
     </div>
 
-    <div><span id="time"></span></div>
+    <div id="main">
+        <div><span id="time"></span></div>
 
-    <div id="today" class="day today">
-        <img id="todaysImage" src="" />
-        <span>Current Temperature: </span><span id="currentTemp"></span>
-        <span>Todays High: </span><span id="todaysHigh"></span>
-        <span>Todays Low: </span><span id="todaysLow"></span>
-    </div>
-    <div id="forecast">
+        <div id="todayCollection">
+            <div id="today" class="day today">
+                <img id="todaysImage" src="" />
+                <span class="currentTemp"><span id="currentTemp"></span><span>°</span></span>
+                <span class="highTemp">High: <span id="todaysHigh"></span><span>°</span></span>
+                <span class="lowTemp">Low: <span id="todaysLow"></span><span>°</span></span>
+            </div>
+            <div id="otherData">
+                <div id="wind">
+                    <span class="otherDataLabel">CHILL: </span>
+                        <span class="otherDataData"></span>
+                    <span class="otherDataLabel">DIRECTION: </span>
+                        <span class="otherDataData"></span>
+                    <span class="otherDataLabel">SPEED: </span>
+                        <span class="otherDataData"></span>
+                </div>
+                <div id="atmosphere">
+                    <span class="otherDataLabel">HUMIDITY: </span>
+                        <span class="otherDataData"></span>
+                    <span class="otherDataLabel">PRESSURE: </span>
+                        <span class="otherDataData"></span>
+                    <span class="otherDataLabel">RISING: </span>
+                        <span class="otherDataData"></span>
+                    <span class="otherDataLabel">VISIBILITY: </span>
+                        <span class="otherDataData"></span>
+                </div>
+                <div id="astronomy">
+                    <span class="otherDataLabel">SUNRISE: </span>
+                        <span class="otherDataData"></span>
+                    <span class="otherDataLabel">SUNSET: </span>
+                        <span class="otherDataData"></span>
+                </div>
+            </div>
+        </div>
 
+
+
+        <div id="forecast">
+
+        </div>
     </div>
 
     <!--    begin required attribution-->
