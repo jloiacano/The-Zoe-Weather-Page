@@ -143,6 +143,7 @@
         $("#astronomySunset").text(weather.results.channel.astronomy.sunset);
 
 
+        $("#forecast").html("");
         // set the forecast data and append it to the forecast div
         for (i = 1; i <= forcast.length - 1; i += 1) {
             src = codeToImage(forcast[i].code);
@@ -159,11 +160,11 @@
 
         function toC(temp) {
             var toReturn = (temp - 32) * 1.8;
+            toReturn = Math.ceil(toReturn * 10) / 10;
             return toReturn;
         }
 
         if ($("input:radio[name='scale']:checked").val() === "celsius") {
-            window.alert("celsified");
             WEATHER_JSON.results.channel.item.condition.temp = toC(WEATHER_JSON.results.channel.item.condition.temp);
             for (i = 0; i < WEATHER_JSON.results.channel.item.forecast.length; i += 1) {
                 WEATHER_JSON.results.channel.item.forecast[i].high = toC(WEATHER_JSON.results.channel.item.forecast[i].high);
