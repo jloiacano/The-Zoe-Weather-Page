@@ -3,7 +3,15 @@
 
     var test,
         WEATHER_JSON,
-        exampleJSON = '{"query":{"count":1,"created":"2017-10-23T12:24:17Z","lang":"en-US","results":{"channel":{"units":{"distance":"mi","pressure":"in","speed":"mph","temperature":"F"},"title":"Yahoo! Weather - Libertyville, IL, US","link":"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2439117/","description":"Yahoo! Weather for Libertyville, IL, US","language":"en-us","lastBuildDate":"Mon, 23 Oct 2017 07:24 AM CDT","ttl":"60","location":{"city":"Libertyville","country":"United States","region":" IL"},"wind":{"chill":"48","direction":"10","speed":"11"},"atmosphere":{"humidity":"99","pressure":"986.0","rising":"0","visibility":"4.9"},"astronomy":{"sunrise":"7:14 am","sunset":"5:58 pm"},"image":{"title":"Yahoo! Weather","width":"142","height":"18","link":"http://weather.yahoo.com","url":"http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"},"item":{"title":"Conditions for Libertyville, IL, US at 06:00 AM CDT","lat":"42.287819","long":"-87.952301","link":"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2439117/","pubDate":"Mon, 23 Oct 2017 06:00 AM CDT","condition":{"code":"12","date":"Mon, 23 Oct 2017 06:00 AM CDT","temp":"50","text":"Rain"},"forecast":[{"code":"12","date":"23 Oct 2017","day":"Mon","high":"57","low":"50","text":"Rain"},{"code":"11","date":"24 Oct 2017","day":"Tue","high":"49","low":"42","text":"Showers"},{"code":"30","date":"25 Oct 2017","day":"Wed","high":"51","low":"37","text":"Partly Cloudy"},{"code":"28","date":"26 Oct 2017","day":"Thu","high":"59","low":"40","text":"Mostly Cloudy"},{"code":"23","date":"27 Oct 2017","day":"Fri","high":"48","low":"39","text":"Breezy"},{"code":"30","date":"28 Oct 2017","day":"Sat","high":"46","low":"35","text":"Partly Cloudy"},{"code":"30","date":"29 Oct 2017","day":"Sun","high":"50","low":"35","text":"Partly Cloudy"},{"code":"30","date":"30 Oct 2017","day":"Mon","high":"52","low":"37","text":"Partly Cloudy"},{"code":"30","date":"31 Oct 2017","day":"Tue","high":"51","low":"38","text":"Partly Cloudy"},{"code":"28","date":"01 Nov 2017","day":"Wed","high":"54","low":"40","text":"Mostly Cloudy"}],"description":"<![CDATA[<img src=\"http://l.yimg.com/a/i/us/we/52/12.gif\"/>\n<BR />\n<b>Current Conditions:</b>\n<BR />Rain\n<BR />\n<BR />\n<b>Forecast:</b>\n<BR /> Mon - Rain. High: 57Low: 50\n<BR /> Tue - Showers. High: 49Low: 42\n<BR /> Wed - Partly Cloudy. High: 51Low: 37\n<BR /> Thu - Mostly Cloudy. High: 59Low: 40\n<BR /> Fri - Breezy. High: 48Low: 39\n<BR />\n<BR />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2439117/\">Full Forecast at Yahoo! Weather</a>\n<BR />\n<BR />\n<BR />\n]]>","guid":{"isPermaLink":"false"}}}}}}';
+        colorIridescentFuchsia = "rgba(250, 5, 108, 1.0)",
+        colorIridescentTurquoise = "rgba(5, 250, 147, 1.0)",
+        colorIridescentCobalt = "rgba(26, 5, 250, 1.0)",
+        colorPastelFuchsia = "rgba(250, 192, 216, 1.0)",
+        colorPastelTurquoise = "rgba(180, 250, 221, 1.0)",
+        colorPastelCobalt = "rgba(186, 180, 250, 1.0)",
+        colorDarkFuchsia = "rgba(122, 2, 53, 1.0)",
+        colorDarkTurquoise =  "rgba(2, 122, 71, 1.0)",
+        colorDarkCobalt = "rgba(11, 2, 122, 1.0)";
 
 
     /* jslint browser */
@@ -71,6 +79,43 @@
         }
     }
 
+    function changeTheColors() {
+        window.console.log("color changer clicked and changed to: ");
+        if ($("input:radio[name='colors']:checked").val() === "iridescent") {
+            window.console.log("iridescent");
+            $("body").css("background-color", colorIridescentFuchsia);
+            $("body").css("color", colorIridescentCobalt);
+            $(".location").css("background-color", colorIridescentTurquoise);
+            $(".settings").css("background-color", colorIridescentTurquoise);
+            $("#otherData").css("background-color", colorIridescentTurquoise);
+            $(".forcastDayDiv").css("border", "1px solid " + colorIridescentTurquoise);
+            $("img").css("filter", "brightness(100%)");
+            $("img").css("-webkit-filter", "brightness(100%)");
+
+        } else if ($("input:radio[name='colors']:checked").val() === "pastel") {
+            window.console.log("pastel");
+            $("body").css("background-color", colorPastelFuchsia);
+            $("body").css("color", colorPastelCobalt);
+            $(".location").css("background-color", colorPastelTurquoise);
+            $(".settings").css("background-color", colorPastelTurquoise);
+            $("#otherData").css("background-color", colorPastelTurquoise);
+            $(".forcastDayDiv").css("border", "1px solid " + colorPastelTurquoise);
+            $("img").css("filter", "brightness(100%)");
+            $("img").css("-webkit-filter", "brightness(100%)");
+
+        } else if ($("input:radio[name='colors']:checked").val() === "dark") {
+            window.console.log("dark");
+            $("body").css("background-color", colorDarkFuchsia);
+            $("body").css("color", colorDarkCobalt);
+            $(".location").css("background-color", colorDarkTurquoise);
+            $(".settings").css("background-color", colorDarkTurquoise);
+            $("#otherData").css("background-color", colorDarkTurquoise);
+            $(".forcastDayDiv").css("border", "1px solid " + colorDarkTurquoise);
+            $("img").css("filter", "brightness(50%)");
+            $("img").css("-webkit-filter", "brightness(50%)");
+        }
+    }
+
     function doSomethingWithTheWeather() {
         var weather = WEATHER_JSON,
             time = weather.created,
@@ -102,7 +147,7 @@
         for (i = 1; i <= forcast.length - 1; i += 1) {
             src = codeToImage(forcast[i].code);
 
-            day = '<div class="forcastDayDiv"><img class="forecastImage weatherImage" src="' + src + '" alt="weatherType" /><span class="forecastDayAndDate"><span class="forecastDay">' + forcast[i].day + '</span><span class="forecastDate">' + forcast[i].date + '</span></span><span class="wholeForecastHigh">HIGH: <span class="forecastHigh">' + forcast[i].high + '</span></span><span class="wholeForecastLow">LOW: <span class="forecastLow">' + forcast[i].low + '</span></span><span class="forecastText">' + forcast[i].text + '</span></div>';
+            day = '<div class="forcastDayDiv"><img class="forecastImage weatherImage" src="' + src + '" alt="weatherType" /><span class="forecastDayAndDate"><span class="forecastDay">' + forcast[i].day + '</span><span class="forecastDate">' + forcast[i].date + '</span></span><span class="wholeForecastHigh">HIGH: <span class="forecastHigh">' + forcast[i].high + '</span><span>°</span></span><span class="wholeForecastLow">LOW: <span class="forecastLow">' + forcast[i].low + '</span><span>°</span></span><span class="forecastText">' + forcast[i].text + '</span></div>';
 
             $("#forecast").append(day);
         }
@@ -176,5 +221,6 @@
 
     $("#cityAndState").click(loadFromCityAndState);
     $("#changeScale").click(getSomeWeather);
+    $("#changeColors").click(changeTheColors);
 
 }());
