@@ -7,105 +7,6 @@
     </title>
     <meta lang="en">
     <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="css/mainStyle.css">
-</head>
-
-<body>
-    <div class="location">
-        <div class="locationImage">
-            <img class="iconImage" src="imageAssets/locationCroppedTransparent.png" alt="location" />
-        </div>
-        <div class="locationInputs">
-            <div>
-                <label class="locationLabel">CITY: </label>
-                <input id="city" type="text" />
-            </div>
-
-            <div>
-                <label class="locationLabel">STATE: </label>
-                <input id="state" type="text" />
-            </div>
-            <button id="cityAndState">UPDATE LOCATION</button>
-        </div>
-
-    </div>
-    <div class="settings">
-        <div class="settingsImage">
-            <img class="iconImage" src="imageAssets/settingsCroppedTransparent2.png" alt="settings" />
-        </div>
-        <div class="settingsInputs">
-            <div>
-                <label>SCALE: </label>
-            </div>
-            <div>
-                <input id="farenheit" type="radio" name="scale" value="farenheit" checked>
-                <label for="farenheit" class="scaleFarenheit"> F<span>°</span></label>
-            </div>
-            <div>
-                <input id="celsius" type="radio" name="scale" value="celsius">
-                <label for="celsius" class="scaleCelsius"> C<span>°</span></label>
-            </div>
-            <button id="changeScale">CHANGE SCALE</button>
-            <hr>
-            <div>
-                <label>THEME: </label>
-            </div>
-            <div>
-                <input id="iridescent" type="radio" name="colors" value="iridescent" checked>
-                <label for="iridescent" class="colorsIridescent"> Iridescent</label>
-            </div>
-            <div>
-                <input id="pastel" type="radio" name="colors" value="pastel">
-                <label for="pastel" class="colorsPastel"> Pastel</label>
-            </div>
-            <div>
-                <input id="dark" type="radio" name="colors" value="dark">
-                <label for="dark" class="colorsDark"> Dark</label>
-            </div>
-            <button id="changeColors">CHANGE COLORS</button>
-        </div>
-
-    </div>
-
-    <div id="main">
-        <div><span id="time"></span></div>
-
-        <div id="todayCollection">
-            <div id="today" class="day today">
-                <img id="todaysImage" src="" />
-                <span class="currentTemp"><span id="currentTemp"></span><span>°</span></span>
-                <span class="highTemp">High: <span id="todaysHigh"></span><span>°</span></span>
-                <span class="lowTemp">Low: <span id="todaysLow"></span><span>°</span></span>
-            </div>
-            <div id="otherData">
-                <div id="wind">
-                    <span class="otherDataLabel">WIND CHILL: </span>
-                    <span id="windChill"></span><span>°</span><br />
-                    <span class="otherDataLabel">WIND DIRECTION: </span>
-                    <span id="windDirection"></span><span>°</span><br />
-                    <span class="otherDataLabel">WIND SPEED: </span>
-                    <span id="windSpeed"></span><span> MPH</span><br />
-                </div>
-                <div id="atmosphere">
-                    <span class="otherDataLabel">HUMIDITY: </span>
-                    <span id="atmosphereHumidity"></span><span>%</span><br />
-                    <span class="otherDataLabel">PRESSURE: </span>
-                    <span id="atmospherePressure"></span><span> millibars</span><br />
-                    <span class="otherDataLabel">RISING: </span>
-                    <span id="atmosphereRising"></span><br />
-                    <span class="otherDataLabel">VISIBILITY: </span>
-                    <span id="atmosphereVisibility"></span><span> miles</span><br />
-                </div>
-                <div id="astronomy">
-        <!doctype html>
-<html>
-
-<head>
-    <title>
-        Zoe's Weather Page
-    </title>
-    <meta lang="en">
-    <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="css/mainStyle.css">
 </head>
@@ -249,28 +150,6 @@
             <a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img id="yahooImage"  src="https://poweredby.yahoo.com/purple.png"/> </a>
         </div>
     </div>
-    <!--    end required attribution-->
-
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/weather.js"></script>
-
-
-</body>
-
-</html>
-            <span class="otherDataLabel">SUNRISE: </span>
-                    <span id="astronomySunrise"></span><br />
-                    <span class="otherDataLabel">SUNSET: </span>
-                    <span id="astronomySunset"></span><br />
-                </div>
-            </div>
-        </div>
-
-        <div id="forecast"></div>
-    </div>
-
-    <!--    begin required attribution-->
-    <a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/purple.png" width="134" height="29"/> </a>
     <!--    end required attribution-->
 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
