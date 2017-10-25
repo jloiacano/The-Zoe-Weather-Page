@@ -277,17 +277,25 @@
 
     function showAbout() {
         window.console.log("ABOUT");
+        $("#about").show();
+    }
+
+    function closeAbout() {
+        window.console.log("CLOSE ABOUT");
+        showSettingsInputs();
+        $("#about").hide();
     }
 
 
 
     getSomeWeather();
 
-    $("#cityAndState").click(loadFromCityAndState);
-    $("#updateSettings").click(changeTheColors);
+    $("#cityAndStateButton").click(loadFromCityAndState);
+    $("#updateSettingsButton").click(changeTheColors);
     $("#locationImage").click(showLocationInputs);
     $("#settingsImage").click(showSettingsInputs);
-    $("#about").click(showAbout);
+    $("#aboutButton").click(showAbout);
+    $("#aboutCloseButton").click(closeAbout);
 
 }());
 
