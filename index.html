@@ -7,31 +7,64 @@
     </title>
     <meta lang="en">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="css/mainStyle.css">
 </head>
 
 <body>
     <div class="location">
+        <div class="locationImage">
+            <img class="iconImage" src="imageAssets/locationCroppedTransparent.png" alt="location" />
+        </div>
+        <div class="locationInputs">
+            <div>
+                <label class="locationLabel">CITY: </label>
+                <input id="city" type="text" />
+            </div>
 
-        <img class="iconImage" src="imageAssets/locationCroppedTransparent.png" alt="location" />
-        <label>CITY: </label>
-        <input id="city" type="text" />
-        <label>STATE: </label>
-        <input id="state" type="text" />
-        <button id="cityAndState">UPDATE LOCATION</button>
+            <div>
+                <label class="locationLabel">STATE: </label>
+                <input id="state" type="text" />
+            </div>
+            <button id="cityAndState">UPDATE LOCATION</button>
+        </div>
 
     </div>
     <div class="settings">
-        <img class="iconImage" src="imageAssets/settingsCroppedTransparent2.png" alt="settings" />
-        <label>SCALE: </label>
-        <input type="radio" name="scale" value="farenheit" checked><span class="scaleFarenheit">F</span>
-        <input type="radio" name="scale" value="celsius"><span class="scaleCelsius">C</span>
-        <button id="changeScale">CHANGE SCALE</button>
-        <input type="radio" name="colors" value="iridescent" checked><span class="colorsIridescent">Iridescent</span>
-        <input type="radio" name="colors" value="pastel"><span class="colorsPastel">Pastel</span>
-        <input type="radio" name="colors" value="dark"><span class="colorsDark">Dark</span>
-        <button id="changeColors">CHANGE COLORS</button>
+        <div class="settingsImage">
+            <img class="iconImage" src="imageAssets/settingsCroppedTransparent2.png" alt="settings" />
+        </div>
+        <div class="settingsInputs">
+            <div>
+                <label>SCALE: </label>
+            </div>
+            <div>
+                <input id="farenheit" type="radio" name="scale" value="farenheit" checked>
+                <label for="farenheit" class="scaleFarenheit"> F<span>°</span></label>
+            </div>
+            <div>
+                <input id="celsius" type="radio" name="scale" value="celsius">
+                <label for="celsius" class="scaleCelsius"> C<span>°</span></label>
+            </div>
+            <button id="changeScale">CHANGE SCALE</button>
+            <hr>
+            <div>
+                <label>THEME: </label>
+            </div>
+            <div>
+                <input id="iridescent" type="radio" name="colors" value="iridescent" checked>
+                <label for="iridescent" class="colorsIridescent"> Iridescent</label>
+            </div>
+            <div>
+                <input id="pastel" type="radio" name="colors" value="pastel">
+                <label for="pastel" class="colorsPastel"> Pastel</label>
+            </div>
+            <div>
+                <input id="dark" type="radio" name="colors" value="dark">
+                <label for="dark" class="colorsDark"> Dark</label>
+            </div>
+            <button id="changeColors">CHANGE COLORS</button>
+        </div>
+
     </div>
 
     <div id="main">
@@ -64,7 +97,168 @@
                     <span id="atmosphereVisibility"></span><span> miles</span><br />
                 </div>
                 <div id="astronomy">
-                    <span class="otherDataLabel">SUNRISE: </span>
+        <!doctype html>
+<html>
+
+<head>
+    <title>
+        Zoe's Weather Page
+    </title>
+    <meta lang="en">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="css/mainStyle.css">
+</head>
+
+<body>
+    <div class="col-xs-12">
+        <div id="locationAndSettingsImagesWrapper">
+            <div id="locationImageWrapper" class="col-xs-6">
+                <div id="locationImage">
+                    <img src="imageAssets/locationCroppedTransparent.png" alt="location" />
+                </div>
+            </div>
+            <div id="settingsImageWrapper" class="col-xs-6">
+                <div id="settingsImage" class="pull-right">
+                    <img src="imageAssets/settingsCroppedTransparent.png" alt="settings" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div id="locationInputsWrapper" class="col-xs-6">
+            <div id="locationInputs">
+                <div>
+                    <label class="locationLabel">CITY: </label>
+                    <input id="city" type="text" />
+                </div>
+
+                <div>
+                    <label class="locationLabel">STATE: </label>
+                    <input id="state" type="text" />
+                </div>
+                <button class="btn-2g" id="cityAndState">UPDATE LOCATION</button>
+            </div>
+        </div>
+        <div id="settingsInputsWrapper" class="col-xs-6 pull-right">
+            <div id="settingsInputs" class="pull-right">
+                <div>
+                    <label>SCALE: </label>
+                </div>
+                <div>
+                    <input id="farenheit" type="radio" name="scale" value="farenheit" checked>
+                    <label for="farenheit" class="scaleFarenheit"> F<span>°</span></label>
+                </div>
+                <div>
+                    <input id="celsius" type="radio" name="scale" value="celsius">
+                    <label for="celsius" class="scaleCelsius"> C<span>°</span></label>
+                </div>
+                <hr>
+                <div>
+                    <label>THEME: </label>
+                </div>
+                <div>
+                    <input id="iridescent" type="radio" name="colors" value="iridescent" checked>
+                    <label for="iridescent" class="colorsIridescent"> Iridescent</label>
+                </div>
+                <div>
+                    <input id="pastel" type="radio" name="colors" value="pastel">
+                    <label for="pastel" class="colorsPastel"> Pastel</label>
+                </div>
+                <div>
+                    <input id="dark" type="radio" name="colors" value="dark">
+                    <label for="dark" class="colorsDark"> Dark</label>
+                </div>
+                <div>
+                <button class="btn-2g" id="updateSettings">UPDATE SETTINGS</button>
+                </div>
+                <div>
+                <button class="btn-2g" id="about">ABOUT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div id="main" class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+            <div class="row">
+                <div id="todaysWeather" class="col-md-8 col-sm-12">
+                    <img id="todaysImage" src="" />
+                    <span class="todaysCurrentTempSpan">
+                        <span id="currentTemp"></span><span>°</span>
+                    </span>
+                    <span class="todaysHighTempSpan">
+                        High: <span id="todaysHigh"></span><span>°</span>
+                    </span>
+                    <span class="todaysLowTempSpan">
+                        Low: <span id="todaysLow"></span><span>°</span>
+                    </span>
+                </div>
+                <div id="otherData" class="col-md-4 col-sm-12">
+                    <span class="weatherLocation"></span>
+                    <hr>
+                    <div id="wind">
+                        <span class="otherDataLabel">WIND CHILL: </span>
+                        <span id="windChill"></span><span>°</span><br />
+                        <span class="otherDataLabel">WIND DIRECTION: </span>
+                        <span id="windDirection"></span><span>°</span><br />
+                        <span class="otherDataLabel">WIND SPEED: </span>
+                        <span id="windSpeed"></span><span> MPH</span><br />
+                    </div>
+                    <hr>
+                    <div id="atmosphere">
+                        <span class="otherDataLabel">HUMIDITY: </span>
+                        <span id="atmosphereHumidity"></span><span>%</span><br />
+                        <span class="otherDataLabel">PRESSURE: </span>
+                        <span id="atmospherePressure"></span><span> millibars</span><br />
+                        <span class="otherDataLabel">RISING: </span>
+                        <span id="atmosphereRising"></span><br />
+                        <span class="otherDataLabel">VISIBILITY: </span>
+                        <span id="atmosphereVisibility"></span><span> miles</span><br />
+                    </div>
+                    <hr>
+                    <div id="astronomy">
+                        <span class="otherDataLabel">SUNRISE: </span>
+                        <span id="astronomySunrise"></span><br />
+                        <span class="otherDataLabel">SUNSET: </span>
+                        <span id="astronomySunset"></span><br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="forecast" class="col-md-10 col-md-offset-1"></div>
+
+    <div class="forecastDayDiv">
+        <div class="col-xs-4">
+            <div class="relativeWrapper">
+                <img class="forecastImage" src="" />
+                <span class="forecastDayAndDate"><span class="forecastDay"></span><span class="forecastDate"></span></span>
+                <span class="forecastHigh"></span>
+                <span class="forecastLow"></span>
+                <span class="forecastText"></span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <!--    begin required attribution-->
+        <div id="attribution" class="col-xl-12">
+            <a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img id="yahooImage"  src="https://poweredby.yahoo.com/purple.png"/> </a>
+        </div>
+    </div>
+    <!--    end required attribution-->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/weather.js"></script>
+
+
+</body>
+
+</html>
+            <span class="otherDataLabel">SUNRISE: </span>
                     <span id="astronomySunrise"></span><br />
                     <span class="otherDataLabel">SUNSET: </span>
                     <span id="astronomySunset"></span><br />
