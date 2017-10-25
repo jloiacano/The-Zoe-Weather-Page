@@ -14,9 +14,24 @@ body img {
   width: 100%;
 }
 body #about {
+  font-family: sans-serif;
   display: none;
   width: 100vw;
   height: 100vh;
+  padding: 3em;
+}
+body .btn-1g {
+  margin-top: 1em;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  background-color: #05fa93;
+  color: #fa056c;
+  border-radius: 0.5em;
+}
+body .btn-1g:hover {
+  background-color: #fa056c;
+  color: #05fa93;
 }
 body .btn-2g {
   width: 100%;

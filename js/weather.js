@@ -211,6 +211,18 @@
             }, function () {
                 $(this).css("color", colorIridescentFuchsia);
             });
+            $(".btn-1g").css("background-color", colorIridescentTurquoise);
+            $(".btn-1g").css("color", colorIridescentFuchsia);
+            $(".btn-1g").hover(function () {
+                $(this).css("background-color", colorIridescentFuchsia);
+            }, function () {
+                $(this).css("background-color", colorIridescentTurquoise);
+            });
+            $(".btn-1g").hover(function () {
+                $(this).css("color", colorIridescentTurquoise);
+            }, function () {
+                $(this).css("color", colorIridescentFuchsia);
+            });
             $("#otherData").css("background-color", colorIridescentTurquoise);
             $(".relativeWrapper").css("border", "1px solid " + colorIridescentTurquoise);
             $("img").css("filter", "brightness(100%)");
@@ -232,6 +244,18 @@
             }, function () {
                 $(this).css("color", colorPastelFuchsia);
             });
+            $(".btn-1g").css("background-color", colorPastelTurquoise);
+            $(".btn-1g").css("color", colorPastelFuchsia);
+            $(".btn-1g").hover(function () {
+                $(this).css("background-color", colorPastelFuchsia);
+            }, function () {
+                $(this).css("background-color", colorPastelTurquoise);
+            });
+            $(".btn-1g").hover(function () {
+                $(this).css("color", colorPastelTurquoise);
+            }, function () {
+                $(this).css("color", colorPastelFuchsia);
+            });
             $("#otherData").css("background-color", colorPastelTurquoise);
             $(".relativeWrapper").css("border", "1px solid " + colorPastelTurquoise);
             $("img").css("filter", "brightness(100%)");
@@ -249,6 +273,18 @@
                 $(this).css("background-color", colorDarkTurquoise);
             });
             $(".btn-2g").hover(function () {
+                $(this).css("color", colorDarkTurquoise);
+            }, function () {
+                $(this).css("color", colorDarkFuchsia);
+            });
+            $(".btn-1g").css("background-color", colorDarkTurquoise);
+            $(".btn-1g").css("color", colorDarkFuchsia);
+            $(".btn-1g").hover(function () {
+                $(this).css("background-color", colorDarkFuchsia);
+            }, function () {
+                $(this).css("background-color", colorDarkTurquoise);
+            });
+            $(".btn-1g").hover(function () {
                 $(this).css("color", colorDarkTurquoise);
             }, function () {
                 $(this).css("color", colorDarkFuchsia);
@@ -286,6 +322,13 @@
         $("#about").hide();
     }
 
+    function openGeorgesWebsite() {
+        var win = window.open('https://backpacker.gr/', '_blank');
+        if (win) {
+            win.focus();
+        }
+    }
+
 
 
     getSomeWeather();
@@ -296,6 +339,7 @@
     $("#settingsImage").click(showSettingsInputs);
     $("#aboutButton").click(showAbout);
     $("#aboutCloseButton").click(closeAbout);
+    $("#fontButton").click(openGeorgesWebsite);
 
 }());
 
