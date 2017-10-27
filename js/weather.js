@@ -345,65 +345,73 @@
         navigator.geolocation.getCurrentPosition(success, error);
     }
 
+    function changeTheElementColors(primary, secondary, tertiary, percentage) {
+        $("body").css("background-color", primary);
+        $("body").css("color", tertiary);
+        $("#otherData").css("background-color", secondary);
+        $(".relativeWrapper").css("border", "1px solid " + secondary);
+        $("img").css("filter", "brightness(" + percentage + "%)");
+        $("img").css("-webkit-filter", "brightness(" + percentage + "%)");
+    }
+
+//    function changeTheButtonColors(buttonArray, textColor, backgroundColor) {
+//        var i;
+//
+//        function hoverArguement(element, attribute, value) {
+//            $(element).css(attribute, value);
+//        }
+//
+//        for (i = 0; i < buttonArray.length; i += 1) {
+//
+//            $(buttonArray[i]).css("background-color", backgroundColor);
+//            $(buttonArray[i]).css("color", textColor);
+//
+//            $(buttonArray[i]).hover(hoverArguement(buttonArray[i], "background-color", textColor), hoverArguement(buttonArray[i], "background-color", backgroundColor));
+//
+//            $(buttonArray[i]).hover(hoverArguement(buttonArray[i], "color", backgroundColor), hoverArguement(buttonArray[i], "color", textColor));
+//
+//        }
+//    }
     function changeTheButtonColors(buttonArray, textColor, backgroundColor) {
         var i;
 
-        function hoverArguement(element, attribute, value) {
-            $(element).css(attribute, value);
+        function actuallyChangeTheButtonColor(element) {
+            $(element).css("background-color", backgroundColor);
+            $(element).css("color", textColor);
+            $(element).hover(function () {
+                $(this).css("background-color", textColor);
+            }, function () {
+                $(this).css("background-color", backgroundColor);
+            });
+            $(element).hover(function () {
+                $(this).css("color", backgroundColor);
+            }, function () {
+                $(this).css("color", textColor);
+            });
         }
 
         for (i = 0; i < buttonArray.length; i += 1) {
-
-            $(buttonArray[i]).css("background-color", backgroundColor);
-            $(buttonArray[i]).css("color", textColor);
-
-            $(buttonArray[i]).hover(hoverArguement(buttonArray[i], "background-color", textColor), hoverArguement(buttonArray[i], "background-color", backgroundColor));
-
-            $(buttonArray[i]).hover(hoverArguement(buttonArray[i], "color", backgroundColor), hoverArguement(buttonArray[i], "color", textColor));
-
+            actuallyChangeTheButtonColor(buttonArray[i]);
         }
     }
 
-    function changeTheColors() {
-        var buttonArray = [".btn-1g", ".btn-2g"],
-            elementArray = [];
+    function changeTheColorTheme() {
+        var buttonArray = [".btn-1g", ".btn-2g"];
 
         window.console.log("color changer clicked and changed to: ");
         if ($("input:radio[name='colors']:checked").val() === "iridescent") {
-            window.console.log("iridescent");
-            $("body").css("background-color", colorIridescentFuchsia);
-            $("body").css("color", colorIridescentCobalt);
 
+            changeTheElementColors(colorIridescentFuchsia, colorIridescentTurquoise, colorIridescentCobalt, 100);
             changeTheButtonColors(buttonArray, colorIridescentFuchsia, colorIridescentTurquoise);
 
-            $("#otherData").css("background-color", colorIridescentTurquoise);
-            $(".relativeWrapper").css("border", "1px solid " + colorIridescentTurquoise);
-            $("img").css("filter", "brightness(100%)");
-            $("img").css("-webkit-filter", "brightness(100%)");
 
         } else if ($("input:radio[name='colors']:checked").val() === "pastel") {
-            window.console.log("pastel");
-            $("body").css("background-color", colorPastelFuchsia);
-            $("body").css("color", colorPastelCobalt);
-
+            changeTheElementColors(colorPastelFuchsia, colorPastelTurquoise, colorPastelCobalt, 100);
             changeTheButtonColors(buttonArray, colorPastelFuchsia, colorPastelTurquoise);
 
-            $("#otherData").css("background-color", colorPastelTurquoise);
-            $(".relativeWrapper").css("border", "1px solid " + colorPastelTurquoise);
-            $("img").css("filter", "brightness(100%)");
-            $("img").css("-webkit-filter", "brightness(100%)");
-
         } else if ($("input:radio[name='colors']:checked").val() === "dark") {
-            window.console.log("dark");
-            $("body").css("background-color", colorDarkFuchsia);
-            $("body").css("color", colorDarkCobalt);
-
+            changeTheElementColors(colorDarkFuchsia, colorDarkTurquoise, colorDarkCobalt, 50);
             changeTheButtonColors(buttonArray, colorDarkFuchsia, colorDarkTurquoise);
-
-            $("#otherData").css("background-color", colorDarkTurquoise);
-            $(".relativeWrapper").css("border", "1px solid " + colorDarkTurquoise);
-            $("img").css("filter", "brightness(50%)");
-            $("img").css("-webkit-filter", "brightness(50%)");
         }
         showSettingsInputs();
         getSomeWeather();
@@ -458,7 +466,7 @@
 
     //    $(".inputter").click(inputTester);
     $("#cityAndStateButton").click(loadFromCityAndState);
-    $("#updateSettingsButton").click(changeTheColors);
+    $("#updateSettingsButton").click(changeTheColorTheme);
     $("#locationImage").click(showLocationInputs);
     $("#settingsImage").click(showSettingsInputs);
     $("#aboutButton").click(showAbout);
