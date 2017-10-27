@@ -345,36 +345,37 @@
         navigator.geolocation.getCurrentPosition(success, error);
     }
 
+    function changeTheButtonColors(buttonArray, textColor, backgroundColor) {
+        var i;
+
+        function hoverArguement(element, attribute, value) {
+            $(element).css(attribute, value);
+        }
+
+        for (i = 0; i < buttonArray.length; i += 1) {
+
+            $(buttonArray[i]).css("background-color", backgroundColor);
+            $(buttonArray[i]).css("color", textColor);
+
+            $(buttonArray[i]).hover(hoverArguement(buttonArray[i], "background-color", textColor), hoverArguement(buttonArray[i], "background-color", backgroundColor));
+
+            $(buttonArray[i]).hover(hoverArguement(buttonArray[i], "color", backgroundColor), hoverArguement(buttonArray[i], "color", textColor));
+
+        }
+    }
+
     function changeTheColors() {
+        var buttonArray = [".btn-1g", ".btn-2g"],
+            elementArray = [];
+
         window.console.log("color changer clicked and changed to: ");
         if ($("input:radio[name='colors']:checked").val() === "iridescent") {
             window.console.log("iridescent");
             $("body").css("background-color", colorIridescentFuchsia);
             $("body").css("color", colorIridescentCobalt);
-            $(".btn-2g").css("background-color", colorIridescentTurquoise);
-            $(".btn-2g").css("color", colorIridescentFuchsia);
-            $(".btn-2g").hover(function () {
-                $(this).css("background-color", colorIridescentFuchsia);
-            }, function () {
-                $(this).css("background-color", colorIridescentTurquoise);
-            });
-            $(".btn-2g").hover(function () {
-                $(this).css("color", colorIridescentTurquoise);
-            }, function () {
-                $(this).css("color", colorIridescentFuchsia);
-            });
-            $(".btn-1g").css("background-color", colorIridescentTurquoise);
-            $(".btn-1g").css("color", colorIridescentFuchsia);
-            $(".btn-1g").hover(function () {
-                $(this).css("background-color", colorIridescentFuchsia);
-            }, function () {
-                $(this).css("background-color", colorIridescentTurquoise);
-            });
-            $(".btn-1g").hover(function () {
-                $(this).css("color", colorIridescentTurquoise);
-            }, function () {
-                $(this).css("color", colorIridescentFuchsia);
-            });
+
+            changeTheButtonColors(buttonArray, colorIridescentFuchsia, colorIridescentTurquoise);
+
             $("#otherData").css("background-color", colorIridescentTurquoise);
             $(".relativeWrapper").css("border", "1px solid " + colorIridescentTurquoise);
             $("img").css("filter", "brightness(100%)");
@@ -384,30 +385,9 @@
             window.console.log("pastel");
             $("body").css("background-color", colorPastelFuchsia);
             $("body").css("color", colorPastelCobalt);
-            $(".btn-2g").css("background-color", colorPastelTurquoise);
-            $(".btn-2g").css("color", colorPastelFuchsia);
-            $(".btn-2g").hover(function () {
-                $(this).css("background-color", colorPastelFuchsia);
-            }, function () {
-                $(this).css("background-color", colorPastelTurquoise);
-            });
-            $(".btn-2g").hover(function () {
-                $(this).css("color", colorPastelTurquoise);
-            }, function () {
-                $(this).css("color", colorPastelFuchsia);
-            });
-            $(".btn-1g").css("background-color", colorPastelTurquoise);
-            $(".btn-1g").css("color", colorPastelFuchsia);
-            $(".btn-1g").hover(function () {
-                $(this).css("background-color", colorPastelFuchsia);
-            }, function () {
-                $(this).css("background-color", colorPastelTurquoise);
-            });
-            $(".btn-1g").hover(function () {
-                $(this).css("color", colorPastelTurquoise);
-            }, function () {
-                $(this).css("color", colorPastelFuchsia);
-            });
+
+            changeTheButtonColors(buttonArray, colorPastelFuchsia, colorPastelTurquoise);
+
             $("#otherData").css("background-color", colorPastelTurquoise);
             $(".relativeWrapper").css("border", "1px solid " + colorPastelTurquoise);
             $("img").css("filter", "brightness(100%)");
@@ -417,30 +397,9 @@
             window.console.log("dark");
             $("body").css("background-color", colorDarkFuchsia);
             $("body").css("color", colorDarkCobalt);
-            $(".btn-2g").css("background-color", colorDarkTurquoise);
-            $(".btn-2g").css("color", colorDarkFuchsia);
-            $(".btn-2g").hover(function () {
-                $(this).css("background-color", colorDarkFuchsia);
-            }, function () {
-                $(this).css("background-color", colorDarkTurquoise);
-            });
-            $(".btn-2g").hover(function () {
-                $(this).css("color", colorDarkTurquoise);
-            }, function () {
-                $(this).css("color", colorDarkFuchsia);
-            });
-            $(".btn-1g").css("background-color", colorDarkTurquoise);
-            $(".btn-1g").css("color", colorDarkFuchsia);
-            $(".btn-1g").hover(function () {
-                $(this).css("background-color", colorDarkFuchsia);
-            }, function () {
-                $(this).css("background-color", colorDarkTurquoise);
-            });
-            $(".btn-1g").hover(function () {
-                $(this).css("color", colorDarkTurquoise);
-            }, function () {
-                $(this).css("color", colorDarkFuchsia);
-            });
+
+            changeTheButtonColors(buttonArray, colorDarkFuchsia, colorDarkTurquoise);
+
             $("#otherData").css("background-color", colorDarkTurquoise);
             $(".relativeWrapper").css("border", "1px solid " + colorDarkTurquoise);
             $("img").css("filter", "brightness(50%)");
