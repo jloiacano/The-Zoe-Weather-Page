@@ -12,10 +12,13 @@
 </head>
 
 <body>
+    <div id="status">
+        <p>loading....</p>
+    </div>
     <div id="about">
         <div class="row">
             <!--    begin required attribution-->
-            <div id="attribution" class="col-xl-12">
+            <div id="attribution" class="col-lg-6 col-lg-offset-3 col-sm-12">
                 <p>The Zoe Weather Page - Copyright (c) 2017 <button id="loiacanoButton" class="btn-1g">Loiacano Designs</button> All rights reserved.</p>
                 <p>UI/UX, Graphic Design: <button id="zoeButton" class="btn-1g">Zöe Loiacano</button></p>
                 <p>Font: BPchildLefty - Copyright (c) 2004 by
@@ -23,18 +26,21 @@
                 <p>WEATHER:
                     <a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img id="yahooImage"  src="https://poweredby.yahoo.com/purple.png"/> </a>
                 </p>
+                <button class="aboutCloseButton btn-2g">CLOSE</button>
             </div>
         </div>
-        <button class="aboutCloseButton btn-2g">CLOSE</button>
         <!--    end required attribution-->
     </div>
     <div id="zoe">
         <div class="row">
-            <div id="zoesAboutPage" class="col-xl-12">
+            <div id="zoesAboutPage" class="col-lg-6 col-lg-offset-3 col-sm-12">
+                <button class="aboutCloseButton btn-2g">CLOSE</button>
+                <p>Zöe is 4 years old.</p>
+                <p>She loves to do math, and her favorite color is pink.</p>
                 <img src="imageAssets/ZoePic.png" alt="ZOE!">
+                <button class="aboutCloseButton btn-2g">CLOSE</button>
             </div>
         </div>
-        <button class="aboutCloseButton btn-2g">CLOSE</button>
     </div>
     <div class="col-xs-12">
         <div id="locationAndSettingsImagesWrapper">
@@ -154,7 +160,7 @@
 
     <div id="forecast" class="col-md-10 col-md-offset-1"></div>
 
-    <div class="forecastDayDiv">
+    <div class="forecastDayDiv" origin="original">
         <div class="col-xs-4">
             <div class="relativeWrapper">
                 <img class="forecastImage" src="" />
@@ -165,7 +171,7 @@
             </div>
         </div>
     </div>
-<!--
+    <!--
     <button class="inputter" custom="blue">Inputter</button>
     <button class="inputter" custom="red">Inputter</button>
 -->

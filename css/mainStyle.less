@@ -23,8 +23,11 @@ body {
         width: 100%;
     }
 
+    #status {
+        display: none;
+    }
+
     #about {
-        font-family: sans-serif;
         display: none;
         width: 100vw;
         height: 100vh;
@@ -33,11 +36,16 @@ body {
 
 
     #zoe {
-        font-family: sans-serif;
+        font-size: 1.3em;
+        font-weight: inherit;
         display: none;
         width: 100vw;
         height: 100vh;
         padding: 3em;
+
+        p {
+            margin-top: 1em;
+        }
     }
 
     .btn-1g {
@@ -72,6 +80,8 @@ body {
     }
 
     #locationAndSettingsImagesWrapper {
+
+        display: none;
 
         #locationImageWrapper {
 
@@ -108,6 +118,8 @@ body {
     }
 
     #main {
+
+        display: none;
 
         #todaysWeather {
             position: relative;
@@ -147,56 +159,58 @@ body {
         }
     }
 
-    .forecastDayDiv {
+    #forecast {
+
         display: none;
 
-        .relativeWrapper {
-            position: relative;
-            top: 0px;
-            margin: 1em;
-            border: 1px solid @zoes-pastel-cobalt;
-            border-radius: 1em;
+        .forecastDayDiv {
+            display: none;
+
+            .relativeWrapper {
+                position: relative;
+                top: 0px;
+                margin: 1em;
+                border: 1px solid @zoes-pastel-cobalt;
+                border-radius: 1em;
 
 
-            .forecastImage {
-                width: 100%;
-            }
+                .forecastImage {
+                    width: 100%;
+                }
 
-            .forecastDayAndDate {
-                position: absolute;
-                top: 1em;
-                left: 1em;
-                color: @zoes-iridescent-cobalt;
-            }
+                .forecastDayAndDate {
+                    position: absolute;
+                    top: 1em;
+                    left: 1em;
+                    color: @zoes-iridescent-cobalt;
+                }
 
-            .forecastHigh {
-                position: absolute;
-                top: 1em;
-                right: 1em;
-                color: @zoes-iridescent-cobalt;
-            }
+                .forecastHigh {
+                    position: absolute;
+                    top: 1em;
+                    right: 1em;
+                    color: @zoes-iridescent-cobalt;
+                }
 
-            .forecastLow {
-                position: absolute;
-                top: 2.5em;
-                right: 1em;
-                color: @zoes-iridescent-cobalt;
-            }
+                .forecastLow {
+                    position: absolute;
+                    top: 2.5em;
+                    right: 1em;
+                    color: @zoes-iridescent-cobalt;
+                }
 
-            .forecastText {
-                position: absolute;
-                bottom: 1em;
-                left: 1em;
-                color: @zoes-iridescent-cobalt;
+                .forecastText {
+                    position: absolute;
+                    bottom: 1em;
+                    left: 1em;
+                    color: @zoes-iridescent-cobalt;
+                }
             }
         }
     }
+}
 
-    #attribution {
-        #yahooImage {
-            width: 8em;
-            margin-left: 2em;
-        }
-    }
-
+#yahooImage {
+    width: 8em;
+    margin-left: 2em;
 }

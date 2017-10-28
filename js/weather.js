@@ -224,6 +224,34 @@
         }
     }
 
+    function showThePage() {
+        $("#status").hide();
+        $("#locationAndSettingsImagesWrapper").show();
+        $("#main").show();
+        $("#forecast").show();
+
+    }
+
+    function showAbout() {
+        $("#locationAndSettingsImagesWrapper").hide();
+        $("#main").hide();
+        $("#forecast").hide();
+        $("#settingsInputsWrapper").hide();
+        $("#about").show();
+    }
+
+    function showZoe() {
+        $("#about").hide();
+        $("#zoe").show();
+    }
+
+    function openGeorgesWebsite() {
+        var win = window.open('https://backpacker.gr/', '_blank');
+        if (win) {
+            win.focus();
+        }
+    }
+
     function showLocationInputs() {
         if ($("#locationInputsWrapper").css("display") === "none") {
             $('#locationInputsWrapper').show();
@@ -244,6 +272,18 @@
             $('#locationAndSettingsImagesWrapper').show();
         }
     }
+
+    function closeAbout() {
+        showThePage();
+        $("#about").hide();
+        $("#zoe").hide();
+    }
+
+
+
+
+
+
 
     function forceLocationEntry() {
         window.console.log("forceLocationEntry invoked");
@@ -287,6 +327,7 @@
         // set the forecast data and append it to the forecast div
         for (i = 1; i <= forecast.length - 1; i += 1) {
             clone = template.clone();
+            clone.attr('origin', "clone");
             $("#forecast").append(clone);
             clone.find(".forecastImage").attr('src', codeToImage(forecast[i].code));
             clone.find(".forecastDay").append(forecast[i].day);
@@ -296,6 +337,8 @@
             clone.find(".forecastText").append(forecast[i].text);
             clone.show();
         }
+
+        showThePage();
     }
 
     function setWeather(response) {
@@ -321,6 +364,7 @@
     }
 
     function getSomeWeather() {
+        $("#status").show();
 
         if (!navigator.geolocation) {
             forceLocationEntry();
@@ -354,24 +398,6 @@
         $("img").css("-webkit-filter", "brightness(" + percentage + "%)");
     }
 
-//    function changeTheButtonColors(buttonArray, textColor, backgroundColor) {
-//        var i;
-//
-//        function hoverArguement(element, attribute, value) {
-//            $(element).css(attribute, value);
-//        }
-//
-//        for (i = 0; i < buttonArray.length; i += 1) {
-//
-//            $(buttonArray[i]).css("background-color", backgroundColor);
-//            $(buttonArray[i]).css("color", textColor);
-//
-//            $(buttonArray[i]).hover(hoverArguement(buttonArray[i], "background-color", textColor), hoverArguement(buttonArray[i], "background-color", backgroundColor));
-//
-//            $(buttonArray[i]).hover(hoverArguement(buttonArray[i], "color", backgroundColor), hoverArguement(buttonArray[i], "color", textColor));
-//
-//        }
-//    }
     function changeTheButtonColors(buttonArray, textColor, backgroundColor) {
         var i;
 
@@ -430,31 +456,6 @@
 
     }
 
-    function showAbout() {
-        window.console.log("ABOUT");
-        $("#about").show();
-    }
-
-    function showZoe() {
-        window.console.log("ZOE!");
-        $("#about").hide();
-        $("#zoe").show();
-    }
-
-    function closeAbout() {
-        window.console.log("CLOSE ABOUT");
-        showSettingsInputs();
-        $("#about").hide();
-        $("#zoe").hide();
-    }
-
-    function openGeorgesWebsite() {
-        var win = window.open('https://backpacker.gr/', '_blank');
-        if (win) {
-            win.focus();
-        }
-    }
-
     //    function inputTester() {
     //        if ($(this).attr("custom") === "blue"){
     //            console.log("blue clicked");
@@ -465,13 +466,16 @@
     getSomeWeather();
 
     //    $(".inputter").click(inputTester);
-    $("#cityAndStateButton").click(loadFromCityAndState);
-    $("#updateSettingsButton").click(changeTheColorTheme);
     $("#locationImage").click(showLocationInputs);
     $("#settingsImage").click(showSettingsInputs);
+
+    $("#cityAndStateButton").click(loadFromCityAndState);
+
+    $("#updateSettingsButton").click(changeTheColorTheme);
     $("#aboutButton").click(showAbout);
     $("#zoeButton").click(showZoe);
-    $(".aboutCloseButton").click(closeAbout);
     $("#fontButton").click(openGeorgesWebsite);
+
+    $(".aboutCloseButton").click(closeAbout);
 
 }());
