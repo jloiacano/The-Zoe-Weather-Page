@@ -81,7 +81,7 @@
                                     text: "Cloudy"
                                 },
                                 {
-                                    code: "26",
+                                    code: "29",
                                     date: "27 Oct 2017",
                                     day: "Fri",
                                     high: "34",
@@ -89,7 +89,7 @@
                                     text: "Cloudy"
                                 },
                                 {
-                                    code: "28",
+                                    code: "1",
                                     date: "28 Oct 2017",
                                     day: "Sat",
                                     high: "34",
@@ -97,7 +97,7 @@
                                     text: "Mostly Cloudy"
                                 },
                                 {
-                                    code: "28",
+                                    code: "5",
                                     date: "29 Oct 2017",
                                     day: "Sun",
                                     high: "36",
@@ -105,7 +105,7 @@
                                     text: "Mostly Cloudy"
                                 },
                                 {
-                                    code: "32",
+                                    code: "31",
                                     date: "30 Oct 2017",
                                     day: "Mon",
                                     high: "33",
@@ -113,7 +113,7 @@
                                     text: "Sunny"
                                 },
                                 {
-                                    code: "32",
+                                    code: "0",
                                     date: "31 Oct 2017",
                                     day: "Tue",
                                     high: "28",
@@ -121,7 +121,7 @@
                                     text: "Sunny"
                                 },
                                 {
-                                    code: "32",
+                                    code: "26",
                                     date: "01 Nov 2017",
                                     day: "Wed",
                                     high: "30",
@@ -129,7 +129,7 @@
                                     text: "Sunny"
                                 },
                                 {
-                                    code: "26",
+                                    code: "29",
                                     date: "02 Nov 2017",
                                     day: "Thu",
                                     high: "34",
@@ -137,7 +137,7 @@
                                     text: "Cloudy"
                                 },
                                 {
-                                    code: "26",
+                                    code: "1",
                                     date: "03 Nov 2017",
                                     day: "Fri",
                                     high: "38",
@@ -145,7 +145,7 @@
                                     text: "Cloudy"
                                 },
                                 {
-                                    code: "26",
+                                    code: "5",
                                     date: "04 Nov 2017",
                                     day: "Sat",
                                     high: "37",
@@ -167,11 +167,11 @@
         case "26":
         case "27":
         case "28":
-            return "imageAssets/cloudyCroppedTransparent.png";
+            return ["imageAssets/1x/cloudyCroppedTransparent.png", "imageAssets/1x/cloudyCroppedTransparent.png 1x, imageAssets/2x/cloudyCroppedTransparent.png 2x, imageAssets/3x/cloudyCroppedTransparent.png 3x"];
         case "29":
         case "30":
         case "44":
-            return "imageAssets/partlyCloudyCroppedTransparent.png";
+            return ["imageAssets/1x/partlyCloudyCroppedTransparent.png", "imageAssets/1x/partlyCloudyCroppedTransparent.png 1x, imageAssets/2x/partlyCloudyCroppedTransparent.png 2x, imageAssets/3x/partlyCloudyCroppedTransparent.png 3x"];
         case "1":
         case "3":
         case "4":
@@ -186,7 +186,7 @@
         case "45":
         case "46":
         case "47":
-            return "imageAssets/rainCroppedTransparent.png";
+            return ["imageAssets/1x/rainCroppedTransparent.png", "imageAssets/1x/rainCroppedTransparent.png 1x, imageAssets/2x/rainCroppedTransparent.png 2x, imageAssets/3x/rainCroppedTransparent.png 3x"];
         case "5":
         case "6":
         case "7":
@@ -201,13 +201,13 @@
         case "41":
         case "42":
         case "43":
-            return "imageAssets/snowCroppedTransparent.png";
+            return ["imageAssets/1x/snowCroppedTransparent.png", "imageAssets/1x/snowCroppedTransparent.png 1x, imageAssets/2x/snowCroppedTransparent.png 2x, imageAssets/3x/snowCroppedTransparent.png 3x"];
         case "31":
         case "32":
         case "33":
         case "34":
         case "36":
-            return "imageAssets/sunnyCroppedTransparent.png";
+            return ["imageAssets/1x/sunnyCroppedTransparent.png", "imageAssets/1x/sunnyCroppedTransparent.png 1x, imageAssets/2x/sunnyCroppedTransparent.png 2x, imageAssets/3x/sunnyCroppedTransparent.png 3x"];
         case "0":
         case "2":
         case "19":
@@ -217,7 +217,7 @@
         case "23":
         case "24":
         case "25":
-            return "imageAssets/windyCroppedTransparent.png";
+            return ["imageAssets/1x/windyCroppedTransparent.png", "imageAssets/1x/windyCroppedTransparent.png 1x, imageAssets/2x/windyCroppedTransparent.png 2x, imageAssets/3x/windyCroppedTransparent.png 3x"];
         default:
             window.console.log("ERROR WITH codeToImage()");
             break;
@@ -305,8 +305,10 @@
             template = $(".forecastDayDiv"),
             clone;
 
+
         $("#time").text("The weather for " + respoonseCity + ", " + responseState + " at " + time);
-        $("#todaysImage").attr('src', codeToImage(forecast[0].code));
+        $("#todaysImage").attr('src', codeToImage(forecast[0].code)[0]);
+        $("#todaysImage").attr('srcset', codeToImage(forecast[0].code)[1]);
         $("#currentTemp").text(currentTemp);
         $("#todaysHigh").text(forecast[0].high);
         $("#todaysLow").text(forecast[0].low);
@@ -329,7 +331,8 @@
             clone = template.clone();
             clone.attr('origin', "clone");
             $("#forecast").append(clone);
-            clone.find(".forecastImage").attr('src', codeToImage(forecast[i].code));
+            clone.find(".forecastImage").attr('src', codeToImage(forecast[i].code)[0]);
+            clone.find(".forecastImage").attr('srcset', codeToImage(forecast[i].code)[1]);
             clone.find(".forecastDay").append(forecast[i].day);
             clone.find(".forecastDate").append(forecast[i].date);
             clone.find(".forecastHigh").append("HIGH: " + forecast[i].high + "°");
