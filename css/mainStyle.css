@@ -129,9 +129,15 @@ body #forecast .forecastDayDiv .relativeWrapper {
 body #forecast .forecastDayDiv .relativeWrapper .forecastImage {
   width: 100%;
 }
-body #forecast .forecastDayDiv .relativeWrapper .forecastDayAndDate {
+body #forecast .forecastDayDiv .relativeWrapper .forecastDay {
   position: absolute;
   top: 1em;
+  left: 1em;
+  color: #1a05fa;
+}
+body #forecast .forecastDayDiv .relativeWrapper .forecastDate {
+  position: absolute;
+  top: 2.5em;
   left: 1em;
   color: #1a05fa;
 }
