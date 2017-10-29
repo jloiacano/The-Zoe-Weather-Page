@@ -9,6 +9,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="css/mainStyle.css">
+    <meta name=viewport content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -37,7 +38,7 @@
                 <button class="aboutCloseButton btn-2g">CLOSE</button>
                 <p>Zöe is 4 years old.</p>
                 <p>She loves to do math, and her favorite color is pink.</p>
-                <img src="imageAssets/1x/ZoePic.png" srcset= "imageAssets/1x/ZoePic.png 1x, imageAssets/2x/ZoePic.png 2x, imageAssets/3x/ZoePic.png 3x" alt="ZOE!">
+                <img src="imageAssets/1x/ZoePic.png" srcset="imageAssets/1x/ZoePic.png 1x, imageAssets/2x/ZoePic.png 2x, imageAssets/3x/ZoePic.png 3x" alt="ZOE!">
                 <button class="aboutCloseButton btn-2g">CLOSE</button>
             </div>
         </div>
@@ -46,18 +47,18 @@
         <div id="locationAndSettingsImagesWrapper">
             <div id="locationImageWrapper" class="col-xs-6">
                 <div id="locationImage">
-                    <img src="imageAssets/1x/locationCroppedTransparent.png" srcset= "imageAssets/1x/locationCroppedTransparent.png 1x, imageAssets/2x/locationCroppedTransparent.png 2x, imageAssets/3x/locationCroppedTransparent.png 3x" alt="location" />
+                    <img src="imageAssets/1x/locationCroppedTransparent.png" srcset="imageAssets/1x/locationCroppedTransparent.png 1x, imageAssets/2x/locationCroppedTransparent.png 2x, imageAssets/3x/locationCroppedTransparent.png 3x" alt="location" />
                 </div>
             </div>
             <div id="settingsImageWrapper" class="col-xs-6">
                 <div id="settingsImage" class="pull-right">
-                    <img src="imageAssets/1x/settingsCroppedTransparent.png" srcset= "imageAssets/1x/settingsCroppedTransparent.png 1x, imageAssets/2x/settingsCroppedTransparent.png 2x, imageAssets/3x/settingsCroppedTransparent.png 3x" alt="settings" />
+                    <img src="imageAssets/1x/settingsCroppedTransparent.png" srcset="imageAssets/1x/settingsCroppedTransparent.png 1x, imageAssets/2x/settingsCroppedTransparent.png 2x, imageAssets/3x/settingsCroppedTransparent.png 3x" alt="settings" />
                 </div>
             </div>
         </div>
     </div>
     <div class="col-xs-12">
-        <div id="locationInputsWrapper" class="col-xs-6">
+        <div id="locationInputsWrapper" class="col-md-6 col-xs-8">
             <div id="locationInputs">
                 <div>
                     <label class="locationLabel">CITY: </label>
@@ -71,7 +72,7 @@
                 <button class="btn-2g" id="cityAndStateButton">UPDATE LOCATION</button>
             </div>
         </div>
-        <div id="settingsInputsWrapper" class="col-xs-6 pull-right">
+        <div id="settingsInputsWrapper" class="col-md-6 col-xs-8 pull-right">
             <div id="settingsInputs" class="pull-right">
                 <div>
                     <label>SCALE: </label>
@@ -161,7 +162,7 @@
     <div id="forecast" class="col-md-10 col-md-offset-1"></div>
 
     <div class="forecastDayDiv" origin="original">
-        <div class="col-xs-4">
+        <div class="col-md-4 col-xs-12">
             <div class="relativeWrapper">
                 <img class="forecastImage" src="" srcset="" />
                 <span class="forecastDay"></span>

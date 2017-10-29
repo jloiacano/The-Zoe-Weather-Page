@@ -1,4 +1,4 @@
-/*global $, navigator, window*/
+/*global $, navigator, window, document*/
 
 (function () {
     "use strict";
@@ -14,155 +14,155 @@
         colorDarkTurquoise = "rgba(2, 122, 71, 1.0)",
         colorDarkCobalt = "rgba(11, 2, 122, 1.0)",
         EXAMPLE_WEATHER_JSON;
-    EXAMPLE_WEATHER_JSON = {
-        query: {
-            count: 1,
-            created: "2017-10-26T20:41:42Z",
-            lang: "en-US",
-            results: {
-                channel: {
-                    units: {
-                        distance: "mi",
-                        pressure: "in",
-                        speed: "mph",
-                        temperature: "F"
-                    },
-                    title: "Yahoo! Weather",
-                    link: "http:\/\/us.rd.yahoo.com\/",
-                    description: "Yahoo! Weather for a city, ST, US",
-                    language: "en-us",
-                    lastBuildDate: "Thu, 26 Oct 2017 12:41 PM AKDT",
-                    ttl: "60",
-                    location: {
-                        city: "A City",
-                        country: "United States",
-                        region: " A State"
-                    },
-                    wind: {
-                        chill: "23",
-                        direction: "45",
-                        speed: "18"
-                    },
-                    atmosphere: {
-                        humidity: "85",
-                        pressure: "991.0",
-                        rising: "0",
-                        visibility: "16.1"
-                    },
-                    astronomy: {
-                        sunrise: "10:27 am",
-                        sunset: "7:2 pm"
-                    },
-                    image: {
-                        title: "Yahoo! Weather",
-                        width: "142",
-                        height: "18",
-                        link: "http:\/\/weather.yahoo.com",
-                        url: "http:\/\/l.yimg.com\/a\/i\/brand\/purplelogo\/\/uh\/us\/news-wea.gif"
-                    },
-                    item: {
-                        title: "Conditions for Nome, AK, US at 11:00 AM AKDT",
-                        lat: "64.499474",
-                        long: "-165.405792",
-                        link: "http:\/\/us.rd.yahoo.com\/dailynews\/rss\/weather\/Country__Country\/*https:\/\/weather.yahoo.com\/country\/state\/city-2460286\/",
-                        pubDate: "Thu, 26 Oct 2017 11:00 AM AKDT",
-                        condition: {
-                            code: "26",
-                            date: "Thu, 26 Oct 2017 11:00 AM AKDT",
-                            temp: "32",
-                            text: "Cloudy"
-                        },
-                        forecast: [
-                            {
-                                code: "26",
-                                date: "26 Oct 2017",
-                                day: "Thu",
-                                high: "33",
-                                low: "28",
-                                text: "Cloudy"
-                            },
-                            {
-                                code: "29",
-                                date: "27 Oct 2017",
-                                day: "Fri",
-                                high: "34",
-                                low: "30",
-                                text: "Cloudy"
-                            },
-                            {
-                                code: "1",
-                                date: "28 Oct 2017",
-                                day: "Sat",
-                                high: "34",
-                                low: "31",
-                                text: "Mostly Cloudy"
-                            },
-                            {
-                                code: "5",
-                                date: "29 Oct 2017",
-                                day: "Sun",
-                                high: "36",
-                                low: "34",
-                                text: "Mostly Cloudy"
-                            },
-                            {
-                                code: "31",
-                                date: "30 Oct 2017",
-                                day: "Mon",
-                                high: "33",
-                                low: "24",
-                                text: "Sunny"
-                            },
-                            {
-                                code: "0",
-                                date: "31 Oct 2017",
-                                day: "Tue",
-                                high: "28",
-                                low: "19",
-                                text: "Sunny"
-                            },
-                            {
-                                code: "26",
-                                date: "01 Nov 2017",
-                                day: "Wed",
-                                high: "30",
-                                low: "24",
-                                text: "Sunny"
-                            },
-                            {
-                                code: "29",
-                                date: "02 Nov 2017",
-                                day: "Thu",
-                                high: "34",
-                                low: "29",
-                                text: "Cloudy"
-                            },
-                            {
-                                code: "1",
-                                date: "03 Nov 2017",
-                                day: "Fri",
-                                high: "38",
-                                low: "33",
-                                text: "Cloudy"
-                            },
-                            {
-                                code: "5",
-                                date: "04 Nov 2017",
-                                day: "Sat",
-                                high: "37",
-                                low: "35",
-                                text: "Cloudy"
-                            }
-                        ],
-                        "guid": {
-                            "isPermaLink": "false"
-                        }
-                    }
-                }
-            }
-        }
-
-    };
+//    EXAMPLE_WEATHER_JSON = {
+//        query: {
+//            count: 1,
+//            created: "2017-10-26T20:41:42Z",
+//            lang: "en-US",
+//            results: {
+//                channel: {
+//                    units: {
+//                        distance: "mi",
+//                        pressure: "in",
+//                        speed: "mph",
+//                        temperature: "F"
+//                    },
+//                    title: "Yahoo! Weather",
+//                    link: "http:\/\/us.rd.yahoo.com\/",
+//                    description: "Yahoo! Weather for a city, ST, US",
+//                    language: "en-us",
+//                    lastBuildDate: "Thu, 26 Oct 2017 12:41 PM AKDT",
+//                    ttl: "60",
+//                    location: {
+//                        city: "A City",
+//                        country: "United States",
+//                        region: " A State"
+//                    },
+//                    wind: {
+//                        chill: "23",
+//                        direction: "45",
+//                        speed: "18"
+//                    },
+//                    atmosphere: {
+//                        humidity: "85",
+//                        pressure: "991.0",
+//                        rising: "0",
+//                        visibility: "16.1"
+//                    },
+//                    astronomy: {
+//                        sunrise: "10:27 am",
+//                        sunset: "7:2 pm"
+//                    },
+//                    image: {
+//                        title: "Yahoo! Weather",
+//                        width: "142",
+//                        height: "18",
+//                        link: "http:\/\/weather.yahoo.com",
+//                        url: "http:\/\/l.yimg.com\/a\/i\/brand\/purplelogo\/\/uh\/us\/news-wea.gif"
+//                    },
+//                    item: {
+//                        title: "Conditions for Nome, AK, US at 11:00 AM AKDT",
+//                        lat: "64.499474",
+//                        long: "-165.405792",
+//                        link: "http:\/\/us.rd.yahoo.com\/dailynews\/rss\/weather\/Country__Country\/*https:\/\/weather.yahoo.com\/country\/state\/city-2460286\/",
+//                        pubDate: "Thu, 26 Oct 2017 11:00 AM AKDT",
+//                        condition: {
+//                            code: "26",
+//                            date: "Thu, 26 Oct 2017 11:00 AM AKDT",
+//                            temp: "32",
+//                            text: "Cloudy"
+//                        },
+//                        forecast: [
+//                            {
+//                                code: "26",
+//                                date: "26 Oct 2017",
+//                                day: "Thu",
+//                                high: "33",
+//                                low: "28",
+//                                text: "Cloudy"
+//                            },
+//                            {
+//                                code: "29",
+//                                date: "27 Oct 2017",
+//                                day: "Fri",
+//                                high: "34",
+//                                low: "30",
+//                                text: "Cloudy"
+//                            },
+//                            {
+//                                code: "1",
+//                                date: "28 Oct 2017",
+//                                day: "Sat",
+//                                high: "34",
+//                                low: "31",
+//                                text: "Mostly Cloudy"
+//                            },
+//                            {
+//                                code: "5",
+//                                date: "29 Oct 2017",
+//                                day: "Sun",
+//                                high: "36",
+//                                low: "34",
+//                                text: "Mostly Cloudy"
+//                            },
+//                            {
+//                                code: "31",
+//                                date: "30 Oct 2017",
+//                                day: "Mon",
+//                                high: "33",
+//                                low: "24",
+//                                text: "Sunny"
+//                            },
+//                            {
+//                                code: "0",
+//                                date: "31 Oct 2017",
+//                                day: "Tue",
+//                                high: "28",
+//                                low: "19",
+//                                text: "Sunny"
+//                            },
+//                            {
+//                                code: "26",
+//                                date: "01 Nov 2017",
+//                                day: "Wed",
+//                                high: "30",
+//                                low: "24",
+//                                text: "Sunny"
+//                            },
+//                            {
+//                                code: "29",
+//                                date: "02 Nov 2017",
+//                                day: "Thu",
+//                                high: "34",
+//                                low: "29",
+//                                text: "Cloudy"
+//                            },
+//                            {
+//                                code: "1",
+//                                date: "03 Nov 2017",
+//                                day: "Fri",
+//                                high: "38",
+//                                low: "33",
+//                                text: "Cloudy"
+//                            },
+//                            {
+//                                code: "5",
+//                                date: "04 Nov 2017",
+//                                day: "Sat",
+//                                high: "37",
+//                                low: "35",
+//                                text: "Cloudy"
+//                            }
+//                        ],
+//                        "guid": {
+//                            "isPermaLink": "false"
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//
+//    };
 
     function codeToImage(code) {
         switch (code) {
@@ -371,11 +371,41 @@
         doSomethingWithTheWeather();
     }
 
+    function getCookie(cname) {
+        var name = cname + "=",
+            decodedCookie = decodeURIComponent(document.cookie),
+            ca = decodedCookie.split(';'),
+            i,
+            c;
+        for (i = 0; i < ca.length; i += 1) {
+            c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) === 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function loadFromCookie() {
+        var cookieCity = getCookie("city"),
+            cookieState = getCookie("state");
+
+        $.getJSON('https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + cookieCity + "," + cookieState + '")&format=json&env=store://datatables.org/alltableswithkeys', setWeather);
+
+    }
+
     function getSomeWeather() {
         $("#status").show();
 
         if (!navigator.geolocation) {
-            forceLocationEntry();
+            if (!document.cookie) {
+                forceLocationEntry();
+            } else {
+                loadFromCookie();
+            }
             return;
         }
 
@@ -388,8 +418,12 @@
 
         function error() {
             window.console.log("ERROR RETRIEVING YAHOO WEATHER JSON RESPONSE");
-
-            forceLocationEntry();
+            $("#status").hide();
+            if (!document.cookie) {
+                forceLocationEntry();
+            } else {
+                loadFromCookie();
+            }
 //            setWeather(EXAMPLE_WEATHER_JSON);
         }
 
@@ -455,6 +489,8 @@
         var city = $("#city").val(),
             state = $("#state").val();
 
+        document.cookie = "city=" + city.toLocaleLowerCase() + ";";
+        document.cookie = "state=" + state.toLocaleLowerCase() + ";";
         $("#city").css("border", "initial");
         $("#state").css("border", "initial");
 
