@@ -60,14 +60,17 @@ body .btn-2g:hover {
   background-color: #fa056c;
   color: #05fa93;
 }
+body .aboutCloseButton {
+  margin-bottom: 1em;
+}
 body #locationAndSettingsImagesWrapper {
   display: none;
 }
 body #locationAndSettingsImagesWrapper #locationImageWrapper #locationImage {
-  width: 4em;
+  width: 3em;
 }
 body #locationAndSettingsImagesWrapper #settingsImageWrapper #settingsImage {
-  width: 4em;
+  width: 3em;
 }
 body #locationInputsWrapper {
   display: none;

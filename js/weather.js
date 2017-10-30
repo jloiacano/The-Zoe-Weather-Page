@@ -169,11 +169,11 @@
         case "26":
         case "27":
         case "28":
-            return ["imageAssets/1x/cloudyCroppedTransparent.png", "imageAssets/1x/cloudyCroppedTransparent.png 1x, imageAssets/2x/cloudyCroppedTransparent.png 2x, imageAssets/3x/cloudyCroppedTransparent.png 3x"];
+            return ["imageAssets/1x/cloudyCroppedTransparent.png", "imageAssets/1x/cloudyCroppedTransparent.png 300w, imageAssets/2x/cloudyCroppedTransparent.png 600w, imageAssets/3x/cloudyCroppedTransparent.png 900w"];
         case "29":
         case "30":
         case "44":
-            return ["imageAssets/1x/partlyCloudyCroppedTransparent.png", "imageAssets/1x/partlyCloudyCroppedTransparent.png 1x, imageAssets/2x/partlyCloudyCroppedTransparent.png 2x, imageAssets/3x/partlyCloudyCroppedTransparent.png 3x"];
+            return ["imageAssets/1x/partlyCloudyCroppedTransparent.png", "imageAssets/1x/partlyCloudyCroppedTransparent.png 300w, imageAssets/2x/partlyCloudyCroppedTransparent.png 600w, imageAssets/3x/partlyCloudyCroppedTransparent.png 900w"];
         case "1":
         case "3":
         case "4":
@@ -188,7 +188,7 @@
         case "45":
         case "46":
         case "47":
-            return ["imageAssets/1x/rainCroppedTransparent.png", "imageAssets/1x/rainCroppedTransparent.png 1x, imageAssets/2x/rainCroppedTransparent.png 2x, imageAssets/3x/rainCroppedTransparent.png 3x"];
+            return ["imageAssets/1x/rainCroppedTransparent.png", "imageAssets/1x/rainCroppedTransparent.png 300w, imageAssets/2x/rainCroppedTransparent.png 600w, imageAssets/3x/rainCroppedTransparent.png 900w"];
         case "5":
         case "6":
         case "7":
@@ -203,13 +203,13 @@
         case "41":
         case "42":
         case "43":
-            return ["imageAssets/1x/snowCroppedTransparent.png", "imageAssets/1x/snowCroppedTransparent.png 1x, imageAssets/2x/snowCroppedTransparent.png 2x, imageAssets/3x/snowCroppedTransparent.png 3x"];
+            return ["imageAssets/1x/snowCroppedTransparent.png", "imageAssets/1x/snowCroppedTransparent.png 300w, imageAssets/2x/snowCroppedTransparent.png 600w, imageAssets/3x/snowCroppedTransparent.png 900w"];
         case "31":
         case "32":
         case "33":
         case "34":
         case "36":
-            return ["imageAssets/1x/sunnyCroppedTransparent.png", "imageAssets/1x/sunnyCroppedTransparent.png 1x, imageAssets/2x/sunnyCroppedTransparent.png 2x, imageAssets/3x/sunnyCroppedTransparent.png 3x"];
+            return ["imageAssets/1x/sunnyCroppedTransparent.png", "imageAssets/1x/sunnyCroppedTransparent.png 300w, imageAssets/2x/sunnyCroppedTransparent.png 600w, imageAssets/3x/sunnyCroppedTransparent.png 900w"];
         case "0":
         case "2":
         case "19":
@@ -219,7 +219,7 @@
         case "23":
         case "24":
         case "25":
-            return ["imageAssets/1x/windyCroppedTransparent.png", "imageAssets/1x/windyCroppedTransparent.png 1x, imageAssets/2x/windyCroppedTransparent.png 2x, imageAssets/3x/windyCroppedTransparent.png 3x"];
+            return ["imageAssets/1x/windyCroppedTransparent.png", "imageAssets/1x/windyCroppedTransparent.png 300w, imageAssets/2x/windyCroppedTransparent.png 600w, imageAssets/3x/windyCroppedTransparent.png 900w"];
         default:
             window.console.log("ERROR WITH codeToImage()");
             break;
@@ -276,9 +276,9 @@
     }
 
     function closeAbout() {
-        showThePage();
         $("#about").hide();
         $("#zoe").hide();
+        showThePage();
     }
 
     function forceLocationEntry() {
